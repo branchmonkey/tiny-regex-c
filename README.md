@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/branchmonkey/tiny-regex-c/badge.svg?branch=master)](https://coveralls.io/github/branchmonkey/tiny-regex-c?branch=master)
+
 # tiny-regex-c
 # A small regex implementation in C
 ### Description
