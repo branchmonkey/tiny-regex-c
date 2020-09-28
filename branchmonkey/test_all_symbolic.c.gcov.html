@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-09-28 11:14:53</td>
+            <td class="headerValue">2020-09-28 12:47:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -71,35 +71,35 @@
 <a name="9"><span class="lineNum">       9 </span>            : #define STRING_LEN 4</a>
 <a name="10"><span class="lineNum">      10 </span>            : #define REGEX_LEN 4</a>
 <a name="11"><span class="lineNum">      11 </span>            : </a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">   10421982 : int runtest()</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineCov">    1152783 : int runtest()</span></a>
 <a name="13"><span class="lineNum">      13 </span>            : {</a>
 <a name="14"><span class="lineNum">      14 </span>            :     int match_length;</a>
 <a name="15"><span class="lineNum">      15 </span>            : </a>
 <a name="16"><span class="lineNum">      16 </span>            :     char string_to_search[STRING_LEN];</a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">   10421982 :     branchmonkey_make_symbolic(string_to_search, sizeof(string_to_search), &quot;string_to_search&quot;);</span></a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">   10421982 :     branchmonkey_assume(string_to_search[STRING_LEN-1] == '\0');</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">    1152783 :     branchmonkey_make_symbolic(string_to_search, sizeof(string_to_search), &quot;string_to_search&quot;);</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">    1152783 :     branchmonkey_assume(string_to_search[STRING_LEN-1] == '\0');</span></a>
 <a name="19"><span class="lineNum">      19 </span>            : </a>
 <a name="20"><span class="lineNum">      20 </span>            :     char regex[REGEX_LEN];</a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">   10421982 :     branchmonkey_make_symbolic(regex, sizeof(regex), &quot;regex&quot;);</span></a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">   10421982 :     branchmonkey_assume(regex[REGEX_LEN-1] == '\0');</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">    1152783 :     branchmonkey_make_symbolic(regex, sizeof(regex), &quot;regex&quot;);</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">    1152783 :     branchmonkey_assume(regex[REGEX_LEN-1] == '\0');</span></a>
 <a name="23"><span class="lineNum">      23 </span>            : </a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">   10421982 :     re_t pattern = re_compile(regex);</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">    1152783 :     re_t pattern = re_compile(regex);</span></a>
 <a name="25"><span class="lineNum">      25 </span>            : </a>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">   10421982 :     int match_idx = re_matchp(pattern, string_to_search, &amp;match_length);</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">    1152783 :     int match_idx = re_matchp(pattern, string_to_search, &amp;match_length);</span></a>
 <a name="27"><span class="lineNum">      27 </span>            : </a>
 <a name="28"><span class="lineNum">      28 </span>            : #if defined(__i386__) || defined(__amd64__)</a>
-<a name="29"><span class="lineNum">      29 </span><span class="lineCov">   10421982 :     re_print(pattern);</span></a>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">   10421982 :     if (match_idx != -1)</span></a>
+<a name="29"><span class="lineNum">      29 </span><span class="lineCov">    1152783 :     re_print(pattern);</span></a>
+<a name="30"><span class="lineNum">      30 </span><span class="lineCov">    1152783 :     if (match_idx != -1)</span></a>
 <a name="31"><span class="lineNum">      31 </span>            :     {</a>
-<a name="32"><span class="lineNum">      32 </span><span class="lineCov">    2461760 :         printf(&quot;match at idx %i, %i chars long.\n&quot;, match_idx, match_length);</span></a>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">    2461760 :     }</span></a>
+<a name="32"><span class="lineNum">      32 </span><span class="lineCov">     272396 :         printf(&quot;match at idx %i, %i chars long.\n&quot;, match_idx, match_length);</span></a>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">     272396 :     }</span></a>
 <a name="34"><span class="lineNum">      34 </span>            : #endif</a>
 <a name="35"><span class="lineNum">      35 </span>            : </a>
 <a name="36"><span class="lineNum">      36 </span>            :     // if (match_idx != -1)</a>
 <a name="37"><span class="lineNum">      37 </span>            :     // {    </a>
 <a name="38"><span class="lineNum">      38 </span>            :     //     branchmonkey_expect(&amp;match_length, sizeof(match_length));</a>
 <a name="39"><span class="lineNum">      39 </span>            :     // }</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">   10421982 :     return match_length;</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">    1152783 :     return match_length;</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : }</a>
 </pre>
       </td>
